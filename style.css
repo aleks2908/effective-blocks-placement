@@ -12,6 +12,7 @@ body {
   position: relative;
   box-sizing: border-box;
   border: 1px solid black;
+  width: 100vw;
   /* overflow: hidden; */
   /* background-color: bisque; */
 }

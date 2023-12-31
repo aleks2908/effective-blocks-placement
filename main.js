@@ -1,6 +1,11 @@
 import "./style.css";
 import rectangles from "./data.json";
-const container = { width: 450, height: 500 };
+
+// const rrr = screen.width;
+// console.log('rrr: ', rrr);
+// const containerWidth = Math.min(450, screen.width);
+
+const container = { width: Math.min(450, screen.width), height: 500 };
 Object.freeze(container);
 
 const refs = {
@@ -10,7 +15,7 @@ const refs = {
 };
 
 // відмальовую контейнер
-refs.containerWrapper.style.width = `${container.width}px`;
+refs.containerWrapper.style.maxWidth = `${container.width}px`;
 refs.containerWrapper.style.height = `${container.height}px`;
 
 //дописуємо в масив блоків вихідний номер блока і його вихідну орієнтацію
@@ -160,7 +165,7 @@ function drawBlocksByBoordinates(blockCoordinates) {
     block.style.left = `${coords.left}px`;
     // block.textContent = coords.initialOrder + ' ' + coords.initialOrientation;
     // block.innerHTML = `<span class = "blockNumber">${coords.initialOrder} ${coords.initialOrientation}</span>`;
-    block.innerHTML = `<span class = "blockNumber">${coords.initialOrder}</span>`;
+    block.innerHTML = `<span class="blockNumber">${coords.initialOrder}</span>`;
     block.style.backgroundColor = `#${Math.floor(Math.random() * 16777215)
       .toString(16)
       .padStart(6, 0)}`;
